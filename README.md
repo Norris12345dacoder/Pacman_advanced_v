@@ -83,6 +83,7 @@ I'm proud of the progress I made in my journey in game design.
 ## AI Implementation
 
 Disclaimer: This project is 100% made by me, completely on my own. However, I did ask AI for advice for specific numbers, such as color scale (styling), sizes of the start and end menus, fonts etc..
+Generated the .gitgore file, if that counts.
 
 ## Future possible improvements
 
