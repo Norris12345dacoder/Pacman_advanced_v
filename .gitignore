@@ -1,4 +1,3 @@
-# Python cache and virtual environments
 __pycache__/
 *.py[cod]
 *.pyo
@@ -8,19 +7,15 @@ __pycache__/
 venv/
 env/
 ENV/
-
-# Tooling and test cache
 .pytest_cache/
 .mypy_cache/
-
-# IDE settings
 .vscode/
 .idea/
-
-# PyInstaller build outputs
 build/
 dist/
-
-# OS files
+*.egg-info/
+pypi-dist/
+*.whl
+*.tar.gz
 .DS_Store
 Thumbs.db

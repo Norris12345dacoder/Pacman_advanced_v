@@ -52,19 +52,21 @@ By eating food
 - apple: 2 points
 - pellets: 1 point
 
-## What to install to run the game
+## Installation
 
-- Python 3.10+
+### From PyPI
 
-- Pygame
+Project link: https://pypi.org/project/pacman-chasing-game/
+
+```bash
+pip install pacman-chasing-game
+pacman-chasing
+```
+
+### From source
 
 ```bash
 pip install -r requirements.txt
-```
-
-## To run the game
-
-```bash
 python pacman_chasing.py
 ```
 

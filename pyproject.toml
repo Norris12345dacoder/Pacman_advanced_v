@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pacman-chasing-game"
+version = "0.1.0"
+description = "A Pygame Pacman clone with multiple ghost behaviors and difficulty levels."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pygame>=2.5,<3",
+]
+authors = [
+    { name = "Norris" },
+]
+keywords = ["pygame", "game", "pacman"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Games/Entertainment :: Arcade",
+]
+
+[project.scripts]
+pacman-chasing = "pacman_game.game:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["pacman_game"]
+
+[tool.setuptools.package-data]
+pacman_game = ["*.png", "*.jpg", "*.txt"]
