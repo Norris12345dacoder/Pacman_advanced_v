@@ -5,6 +5,7 @@ import pygame
 from pygame.locals import K_a, K_d, K_s, K_w, MOUSEBUTTONDOWN, QUIT
 SCREEN_SIZE = 592
 TILE_SIZE = 16
+MAX_TILE_ORIGIN = SCREEN_SIZE - TILE_SIZE
 WIN_SCORE = 250
 window = None
 fps_clock = None
@@ -103,7 +104,7 @@ class Player:
             self.angle = 90
         elif press[K_s]:
             self.y += TILE_SIZE
-            if self.y > SCREEN_SIZE or (self.x, self.y) in map_xy:
+            if self.y > MAX_TILE_ORIGIN or (self.x, self.y) in map_xy:
                 self.y -= TILE_SIZE
             self.angle = 270
         elif press[K_a]:
@@ -113,7 +114,7 @@ class Player:
             self.angle = 180
         elif press[K_d]:
             self.x += TILE_SIZE
-            if self.x > SCREEN_SIZE or (self.x, self.y) in map_xy:
+            if self.x > MAX_TILE_ORIGIN or (self.x, self.y) in map_xy:
                 self.x -= TILE_SIZE
             self.angle = 0
         for index, food_tile in enumerate(food_xy):
@@ -161,7 +162,7 @@ class Ghost:
                 self.angle = min(possible, key=lambda direction: distances[direction])
         if self.angle == 0:
             self.x += 4
-            if self.x > SCREEN_SIZE or (self.x + 12, self.y) in map_xy:
+            if self.x > MAX_TILE_ORIGIN or (self.x + 12, self.y) in map_xy:
                 self.x -= 4
         if self.angle == 180:
             self.x -= 4
@@ -173,7 +174,7 @@ class Ghost:
                 self.y += 4
         if self.angle == 270:
             self.y += 4
-            if self.y > SCREEN_SIZE or (self.x, self.y + 12) in map_xy:
+            if self.y > MAX_TILE_ORIGIN or (self.x, self.y + 12) in map_xy:
                 self.y -= 4
 class PurpleGhost:
     def __init__(self, image, teleport_interval=5000):
